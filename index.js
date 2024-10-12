@@ -7,6 +7,9 @@ const port = 3000;
 
 app.use(cors());
 
+let hotels = require("./hotels");
+hotels=hotels.hotels;
+
 app.get('/hotels/sort/pricing', (req, res) => {
   const pricingOrder = req.query.pricing || 'low-to-high';
   const sortedHotels = hotels
